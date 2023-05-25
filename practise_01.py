@@ -40,12 +40,9 @@ class Network(object):
         self.weights = [np.random.randn(x,y) for x,y in zip(sizes[1:],sizes[:-1])]
         self.biases = [np.random.randn(x,1) for x in sizes[1:]]
 
-    def show(self):
-       print(self.num_layers)
-       for bias in self.biases:
-        print(bias.shape)
-       for weight in self.weights:
-        print(weight.shape)
+    def forwardpropagation(self,a):
+        for b,w in zip(self.biases, self.weights):
+            a = np.dot(w, a) - b # sig (w.a +b)
+            print(a.shape)
+        return a
 
-net=Network([784,128,64,10])
-net.show()
