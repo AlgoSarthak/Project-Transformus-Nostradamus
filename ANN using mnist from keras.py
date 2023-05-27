@@ -52,7 +52,7 @@ class Network(object):
             activation= sigmoid(np.dot(w, activation) + b)
             activation_list.append(activation)
 
-        delta= (activation_list[-1] - y_t)*(activation_list[-1])*(1 - activation_list[-1])
+        delta= (activation_list[-1] - y_t)
         nabla_b[-1]= delta
         nabla_w[-1]= (delta)*(activation_list[-2].T)
 

@@ -85,7 +85,7 @@ class Network(object):
             activation= sigmoid(np.dot(w, activation) + b)
             activation_list.append(activation)
 
-        delta= (activation_list[-1] - y_t)*(activation_list[-1])*(1 - activation_list[-1])
+        delta= (activation_list[-1] - y_t)
 
         # step 2 : nabla_b and nabla_w relation with delta of last layer
 
